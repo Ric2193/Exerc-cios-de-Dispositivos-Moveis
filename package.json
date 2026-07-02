@@ -1,0 +1,10 @@
+{
+  "name": "exercicio-typescript-utils",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Exercício de aquecimento em TypeScript/JavaScript moderno",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

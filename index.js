@@ -1,33 +1,46 @@
 import { unique, groupBy, sumBy } from './arrayUtils.js';
 
+// --- Demonstração da função unique ---
+console.log('--- Exercício 01: unique ---');
 const numeros = [1, 2, 2, 3, 4, 4, 5];
-const cores = ['azul', 'verde', 'azul', 'amarelo'];
-console.log(unique(numeros));
-console.log(unique(cores));
+const cores = ['azul', 'verde', 'azul', 'vermelho', 'verde'];
 
+console.log('Exemplo 1 (Números):', unique(numeros)); // Esperado: [1, 2, 3, 4, 5]
+console.log('Exemplo 2 (Strings):', unique(cores));   // Esperado: ['azul', 'verde', 'vermelho']
+console.log('');
+
+// --- Demonstração da função groupBy ---
+console.log('--- Exercício 02: groupBy ---');
 const produtos = [
-  { nome: 'Camisa', categoria: 'Vestuário' },
-  { nome: 'Calça', categoria: 'Vestuário' },
+  { nome: 'Camiseta', categoria: 'Roupas' },
+  { nome: 'Calça', categoria: 'Roupas' },
   { nome: 'Mouse', categoria: 'Eletrônicos' },
   { nome: 'Teclado', categoria: 'Eletrônicos' }
 ];
-const alunos = [
-  { nome: 'João', status: 'Aprovado' },
-  { nome: 'Maria', status: 'Reprovado' },
-  { nome: 'Pedro', status: 'Aprovado' }
-];
-console.log(JSON.stringify(groupBy(produtos, 'categoria'), null, 2));
-console.log(JSON.stringify(groupBy(alunos, 'status'), null, 2));
 
-const carrinho = [
-  { item: 'Livro', preco: 50 },
-  { item: 'Caneta', preco: 5 },
-  { item: 'Caderno', preco: 25 }
+const pessoas = [
+  { nome: 'Ana', cidade: 'São Paulo' },
+  { nome: 'Beto', cidade: 'Rio de Janeiro' },
+  { nome: 'Carla', cidade: 'São Paulo' }
 ];
-const despesas = [
-  { descricao: 'Aluguel', valor: 1200 },
-  { descricao: 'Internet', valor: 100 },
-  { descricao: 'Energia', valor: 150 }
+
+console.log('Exemplo 1 (Produtos por Categoria):', JSON.stringify(groupBy(produtos, 'categoria'), null, 2));
+console.log('Exemplo 2 (Pessoas por Cidade):', JSON.stringify(groupBy(pessoas, 'cidade'), null, 2));
+console.log('');
+
+// --- Demonstração da função sumBy ---
+console.log('--- Exercício 03: sumBy ---');
+const vendas = [
+  { item: 'A', valor: 10 },
+  { item: 'B', valor: 20 },
+  { item: 'C', valor: 15 }
 ];
-console.log(sumBy(carrinho, 'preco'));
-console.log(sumBy(despesas, 'valor'));
+
+const estoque = [
+  { produto: 'X', quantidade: 5 },
+  { produto: 'Y', quantidade: 12 },
+  { produto: 'Z', quantidade: 8 }
+];
+
+console.log('Exemplo 1 (Soma de Vendas):', sumBy(vendas, 'valor'));     // Esperado: 45
+console.log('Exemplo 2 (Soma de Estoque):', sumBy(estoque, 'quantidade')); // Esperado: 25
